@@ -56,7 +56,6 @@ function main() {
     else { count++ }
 
     document.getElementById("main").src = current[count];
-    console.log(count)
 }
 
 setInterval(main, 200);
