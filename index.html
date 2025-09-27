@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mashle Dance</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #root {
+            background-color: black;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .stage {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stage img {
+            max-height: 80%;
+            max-width: 80%;
+            border-radius: 0px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+        }
+
+        .buttons {
+            height: 30vh;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .buttons span {
+            width: 120px;
+            height: 50px;
+            background: linear-gradient(90deg, #0066ff, #0b00a7);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
+            outline: none;
+        }
+        .buttons span:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 600px) {
+            .buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .buttons span {
+                width: 45vw;
+                height: 50px;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div class="stage">
+            <img id="main" src="./default/0.png" alt="Mashle Dance" />
+        </div>
+        <div class="buttons">
+            <span id="step-1">Step 1</span>
+            <span id="step-2">Step 2</span>
+            <span id="step-3">Step 3</span>
+            <span id="step-4">Step 4</span>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+    <audio controls style=" display:none;" loop   id="music"  >
+      <source  src="bbb.mp3">
+      <script>
+        window.addEventListener("click",play);
+        function play() { document.getElementById("music").play();
+        }
+      </script> 
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+      <script>
+          swal("Hello, People!","Music is on!! Just play random buttons and make your own step, just for fun!");
+          
+      </script>
+</body>
+</html>
